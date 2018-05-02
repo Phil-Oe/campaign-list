@@ -1,0 +1,133 @@
+
+.single-campaign {
+  background: $white;
+  border: 1px solid $g3;
+  @include border-radius(3px);
+  @include box-shadow(0 2px 2px 0 rgba(0,0,0,0.05));
+  @include box-sizing();
+  margin-bottom: 20px;
+
+  &:nth-child(even){
+    background: $primary-light;
+
+    @media #{$tablet-max} {
+      background: $white;
+    }
+  }
+
+  .single-campaign__head {
+    border: 1px solid $g3;
+    border-width: 0 0 1px 0;
+    padding: 15px 10px;
+  }
+  .single-campaign__title {
+    @include fmb(20px);
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+  .single-campaign__times {
+    @include align-items(center);
+    @include flex();
+    @include fm(14px);
+
+    @media #{$tablet-max} {
+      @include align-items(stretch);
+      @include flex-direction(column);
+    }
+  }
+  .single-campaign__timedata {
+    @include flex-grow(1);
+    @include flex-shrink(1);
+
+    @media #{$tablet-max} {
+      margin-bottom: 10px;
+    }
+  }
+  .single-campaign__goal {
+    @include align-self(flex-end);
+    @include flex-grow(0);
+    @include flex-shrink(0);
+    position: relative;
+    text-align: right;
+
+    @media #{$tablet-max} {
+      @include align-self(flex-start);
+    }
+
+    .single-campaign__goalset {
+      @include border-radius(3px);
+      display: inline-block;
+      padding: 5px;
+
+      &.awareness {
+        border: $tertiary solid 1px;
+        color: $tertiary-dark;
+      }
+      &.consideration {
+        border: $primary solid 1px;
+        color: $primary-dark;
+      }
+      &.conversions {
+        border: $secondary solid 1px;
+        color: $secondary-dark;
+      }
+    }
+    .single-campaign__goalless {
+      min-height: 41px;
+      padding: 0 10px;
+      position: relative;
+      text-align: right;
+      width: 200px;
+
+      @media #{$tablet-max} {
+        padding: 0;
+      }
+    }
+  }
+  .single-campaign__table {
+    @include align-items();
+    @include flex();
+
+    @media #{$tablet-max} {
+      @include flex-direction(column);
+    }
+
+  }
+  .single-campaign__value {
+    border: 1px solid $g3;
+    border-width: 0 0 0 1px;
+    @include box-sizing();
+    @include flex-grow(1);
+    @include flex-shrink(0);
+    @include fmb(18px);
+    padding: 10px;
+    text-align: center;
+
+    &:first-child { border-width: 0 0 0 0;}
+
+    @media #{$tablet-max} {
+      &:nth-child(even){
+        background: $primary-light;
+      }
+    }
+  }
+  .single-campaign__totalvalue {
+    @media #{$tablet-max} {
+      text-align: right;
+    }
+  }
+  .single-campaign__subvalue {
+    display: block;
+    @include fm(14px);
+  }
+  .single-campaign__label {
+    display: none;
+
+    @media #{$tablet-max} {
+      display: inline-block;
+      float: left;
+      font-size: 14px;
+    }
+  }
+}

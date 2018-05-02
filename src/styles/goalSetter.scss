@@ -1,0 +1,49 @@
+.goal-setter {
+  background: $white;
+  border: 1px solid $g3;
+  @include border-radius(0 0 3px 3px);
+  @include box-shadow(0 2px 2px 0 rgba(0,0,0,0.05));
+  left: -1px;
+  padding: 10px;
+  position: absolute;
+  top: -11px;
+  width: 200px;
+  z-index: 1;
+
+  .button {
+    margin-top: 10px;
+    &:first-child {margin-top: 0;}
+    &.awareness {
+      background: $tertiary;
+      color: $white;
+
+      &:hover {
+        background: $tertiary-dark;
+      }
+      &:active {
+        background: $tertiary;
+      }
+    }
+    &.consideration {
+      background: $primary;
+      color: $white;
+
+      &:hover {
+        background: $primary-dark;
+      }
+      &:active {
+        background: $primary;
+      }
+    }
+    &.conversions {
+      background: $secondary;
+      color: $white;
+      &:hover {
+        background: $secondary-dark;
+      }
+      &:active {
+        background: $secondary;
+      }
+    }
+  }
+}

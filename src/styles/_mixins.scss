@@ -1,0 +1,176 @@
+$black: #000000;
+$g1: #55677a;
+$g2: #a8b3bd;
+$g3: #e7e7e8;
+$primary-light: #f5f7fb;
+$primary: #2d91c8;
+$primary-dark: #24739e;
+$secondary: #ffaa28;
+$secondary-dark: #f49400;
+$tertiary: #2daf64;
+$tertiary-dark: #279857;
+$white: #fff;
+
+@mixin box-sizing ($type: border-box) {
+  -webkit-box-sizing: $type;
+  -moz-box-sizing: $type;
+  box-sizing: $type;
+}
+
+@mixin border-radius ($radius: 5px) {
+  -webkit-border-radius: $radius;
+  -moz-border-radius: $radius;
+  border-radius: $radius;
+  -moz-background-clip: padding;
+  -webkit-background-clip: padding-box;
+  background-clip: padding-box;
+}
+
+@mixin appearance($type: none) {
+  -moz-appearance: $type;
+  -webkit-appearance: $type;
+  appearance: $type;
+}
+
+@mixin box-shadow ($string) {
+  -webkit-box-shadow: $string;
+  -moz-box-shadow: $string;
+  box-shadow: $string;
+}
+
+@mixin font-smoothing() {
+  font-smooth: never;
+  -webkit-font-smoothing: antialiased;
+  font-smoothing: antialiased;
+}
+
+/* FLEX BOX */
+
+
+@mixin flex() {
+  display: -ms-flexbox;
+  display: -webkit-box;
+  display: -webkit-flexbox;
+  display: flexbox;
+  display: -webkit-flex;
+  display: flex;
+}
+
+@mixin flex-direction($direction: row) {
+  -webkit-flex-direction: $direction;
+  -ms-flex-direction: $direction;
+  flex-direction: $direction;
+}
+
+@mixin flex-direction-column {
+  -webkit-box-orient: vertical;
+  flex-direction: column;
+}
+
+@mixin flex-flow($direction: column wrap) {
+  -moz-flex-flow: $direction;
+  -webkit-flex-flow: $direction;
+  flex-flow: $direction;
+}
+
+@mixin flex-grow($factor:0) {
+  -webkit-box-flex: $factor;
+  -webkit-flex-grow: $factor;
+  -moz-flex-grow: $factor;
+  -ms-flex-positive: $factor;
+  flex-grow: $factor;
+}
+
+@mixin flex-shrink($shrink: 1) {
+  -webkit-flex-shrink: $shrink;
+  -ms-flex-shrink: $shrink;
+  flex-shrink: $shrink;
+}
+
+@mixin flex-wrap($wrap: nowrap) {
+  -webkit-flex-wrap: $wrap;
+  -ms-flex-wrap: $wrap;
+  flex-wrap: $wrap;
+}
+
+@mixin flex-basis($width: auto) {
+  -webkit-flex-basis: $width;
+  -ms-flex-basis: $width;
+  flex-basis: $width;
+}
+
+@mixin align-content($align: stretch) {
+  -webkit-align-content: $align;
+  -ms-align-content: $align;
+  align-content: $align;
+}
+
+@mixin align-items($align: stretch) {
+  -webkit-align-items: $align;
+  -ms-align-items: $align;
+  align-items: $align;
+}
+
+@mixin align-self($align: auto) {
+  -webkit-align-self: $align;
+  -ms-align-self: $align;
+  align-self: $align;
+}
+
+@mixin justify-content($justify: flex-start) {
+  -webkit-justify-content: $justify;
+  -ms-justify-content: $justify;
+  justify-content: $justify;
+}
+
+/* FONTS */
+
+@mixin fm($size) {
+  font: $size 'Open Sans',Arial, sans-serif;
+  @include font-smoothing();
+  font-weight: normal;
+  line-height: 140%;
+  @media all and (-webkit-min-device-pixel-ratio:0) and (min-resolution: .001dpcm) {
+    font-weight: 500;
+  }
+}
+@mixin fmm($size) {
+  font: $size 'Open Sans',Arial, sans-serif;
+  @include font-smoothing();
+  font-weight: 600;
+  line-height: 140%;
+}
+
+@mixin fml($size) {
+  font: $size 'Open Sans',Arial, sans-serif;
+  @include font-smoothing();
+  font-weight: lighter;
+  line-height: 140%;
+}
+
+@mixin fmxl($size) {
+  font: $size 'Open Sans',Arial, sans-serif;
+  @include font-smoothing();
+  font-weight: lighter;
+  line-height: 140%;
+}
+
+
+@mixin fmb($size) {
+  font: $size 'Open Sans',Arial, sans-serif;
+  @include font-smoothing();
+  line-height: 140%;
+  font-weight: bold;
+}
+
+$desktop: "only screen and (min-width: 769px) and (max-width: 1024px)";
+$desktop-max: "only screen and (max-width: 1024px)";
+$desktop-min: "only screen and (min-width: 769px)";
+$tablet: "only screen and (min-width: 479px) and (max-width: 768px)";
+$tablet-max: "only screen and (max-width: 768px)";
+$tablet-min: "only screen and (min-width: 479px)";
+$mobile: "only screen and (min-width: 321px) and (max-width: 478px)";
+$mobile-max: "only screen and (max-width: 478px)";
+$phablet: "only screen and (min-width: 321px) and (max-width: 678px)";
+$phablet-max: "only screen and (max-width: 678px)";
+$phablet-min: "only screen and (min-width: 679px)";
