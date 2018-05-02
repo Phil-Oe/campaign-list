@@ -3,7 +3,7 @@
 ### Get started!
 ```
 git clone
-cd React-Redux-Sass-Starter
+cd campaign-list
 npm i
 ```
 
