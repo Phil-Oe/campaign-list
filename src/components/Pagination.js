@@ -5,15 +5,15 @@ class Pagination extends Component {
 
   constructor(props) {
     super(props);
-    this.state = {};
+    this.state = {
+      count: 1,
+    };
   }
 
   componentWillReceiveProps(nextProps) {
     if (this.props === nextProps) return;
-    const {itemsPerPage, page, count} = nextProps;
-    const startPage = page > itemsPerPage ? page - itemsPerPage : 1;
-    const endPage = page + itemsPerPage > count ? count : page + itemsPerPage;
-    this.setState({startPage, endPage, count});
+    const { count } = nextProps;
+    this.setState({ count });
   }
 
   onPageChange = e => {
@@ -31,9 +31,8 @@ class Pagination extends Component {
   }
 
   render() {
-    const {startPage, endPage, count} = this.state;
-    const {page} = this.props;
-    const pages = [];
+    const { count } = this.state;
+    const { page } = this.props;
 
     const prevPage = page === 1 ? null :
       <button
@@ -59,7 +58,6 @@ class Pagination extends Component {
 Pagination.propTypes = {
   onPageChange: PropTypes.func,
   count: PropTypes.number,
-  itemsPerPage: PropTypes.number,
   page: PropTypes.number,
 };
 

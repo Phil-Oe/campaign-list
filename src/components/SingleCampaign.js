@@ -19,7 +19,7 @@ class SingleCampaign extends Component {
     });
   }
   setGoal = (newGoal) => {
-    const {item} = this.props;
+    const { item } = this.props;
     item.goal = newGoal;
     this.setState({
       goalsOpen: !this.state.goalsOpen,
@@ -27,8 +27,8 @@ class SingleCampaign extends Component {
   }
 
   render() {
-    const {item} = this.props;
-    const {goalsOpen} = this.state;
+    const { item } = this.props;
+    const { goalsOpen } = this.state;
 
     return (
       <div className="single-campaign col-group">

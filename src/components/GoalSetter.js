@@ -4,10 +4,6 @@ import onClickOutside from 'react-onclickoutside';
 
 class GoalSetter extends Component {
 
-  constructor(props) {
-    super(props);
-  }
-
   handleToggle = () => {
     this.props.toggleGoal();
   }

@@ -43,7 +43,6 @@ class App extends Component {
 				</div>}
 				<Pagination
 					count={Math.ceil(total / this.itemsPerPage)}
-					itemsPerPage={this.itemsPerPage}
 					page={page}
 					onPageChange={this.handlePageChange}
 				/>
